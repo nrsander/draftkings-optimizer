@@ -7,8 +7,12 @@ const YAHOO = {
 	name: 'Yahoo',
 	type: 'oauth',
 	version: '2.0',
-	// accessTokenUrl: ACCESS_TOKEN_URL,
-	// authorizationUrl: AUTHORIZATION_URL,
+	params: {
+		grant_type: 'authorization_code',
+	},
+	accessTokenUrl: 'https://api.login.yahoo.com/oauth2/get_token',
+	authorizationUrl:
+		'https://api.login.yahoo.com/oauth2/request_auth?response_type=code',
 	clientId: YAHOO_ID,
 	clientSecret: YAHOO_SECRET,
 };

@@ -20,7 +20,7 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					{process.env.ENV !== 'develop' && (
+					{process.env.NODE_ENV !== 'develop' && (
 						<>
 							<script
 								async

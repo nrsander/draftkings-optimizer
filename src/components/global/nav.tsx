@@ -180,13 +180,13 @@ const Nav = (props: any) => {
 				</ul>
 				<div className="flex items-center flex-col space-y-6 text-center">
 					{/* @TODO: Integrate OAuth */}
-					{/* <div>
+					<div>
 						{!session ? (
 							<>
 								<p>Not signed in</p>
 								<button
 									className="mt-2 px-6 py-2 font-black rounded-lg bg-blue-300 text-blue-900"
-									onClick={signIn as any}
+									onClick={() => signIn()}
 									type="button"
 								>
 									Sign in
@@ -207,7 +207,7 @@ const Nav = (props: any) => {
 								</button>
 							</>
 						)}
-					</div> */}
+					</div>
 					<Donate />
 				</div>
 			</div>
