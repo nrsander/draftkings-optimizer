@@ -20,26 +20,27 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					{process.env.NODE_ENV !== 'development' && (
-						<>
-							<script
-								async
-								src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-							/>
+					{process.env.NODE_ENV !== 'development' &&
+						process.env.GA_TRACKING_ID && (
+							<>
+								<script
+									async
+									src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+								/>
 
-							<script
-								// eslint-disable-next-line react/no-danger
-								dangerouslySetInnerHTML={{
-									__html: `
+								<script
+									// eslint-disable-next-line react/no-danger
+									dangerouslySetInnerHTML={{
+										__html: `
 								window.dataLayer = window.dataLayer || [];
 								function gtag(){dataLayer.push(arguments);}
 								gtag('js', new Date());
 								gtag('config', '${process.env.GA_TRACKING_ID}');
 							`,
-								}}
-							/>
-						</>
-					)}
+									}}
+								/>
+							</>
+						)}
 
 					<link
 						href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap"
